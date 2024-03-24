@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    border: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #4d59fb;
+}
+
+.searchCon {
+    background-color: #fff ;
+    padding: 3rem 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 500px;
+    box-shadow: 0 1.25rem 1.8 rgba();
+    border-radius: 15px;
+    ;
+}
+
+.searchCon .head {
+    text-align: center;
+    font-size: 35px;
+   padding: 28px 28px 45px;
+    font-weight: 500;
+    color: #080708;
+}
+
+
+
+
+.searchCon .search {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 1rem;
+}
+
+ .search input{
+   height: 53px;
+   width: 100%;
+    border: 1px solid #999;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 20px;
+   
+ }
+ .search input::placeholder{
+    font-size: 16px;
+ }
+
+.searchCon button{
+    font-size:16px;
+    color: #ffffff;
+    padding: 0.8rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: cadetblue;
+
+}
+
+#active .visible {
+    font-size: 2rem;
+    color: #311231b0;
+    text-transform: uppercase;
+}
+
+#active .word {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+
+#active button {
+    background-color: transparent;
+    color: #311231b0;
+    border: none;
+    outline: none;
+    font-size: 1.9rem ;
+}
+
+
+#active .info {
+    display: flex;
+    gap: 10px;
+    color: #311231b0;
+    margin: 5px 0 20px 0;
+    font-size: 14px;
+}
+
+.word-meaning {
+   color: #311231b0;
+    flex-wrap: wrap;
+}
+
+.antonyms {
+   color:  #311231b0;
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+    margin-top: 30px;
+
+}
+.synonyms {
+    margin: 2rem 0;
+    color:  #311231b0;
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+}
+
+.word-example {
+    color:  #311231b0;
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+    flex-wrap: wrap;
+}
+
+
+.err {
+    margin-top: 10rem; 
+    text-align: center;
+    color: red;
+}
+
+@media  screen and (max-width: 600px) {
+   
+    .searchCon {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 501px) {
+        .searchCon {
+            width: 80%;
+        }
+        .searchCon .head{
+            font-size: 25px;
+        }
+       
+        }
+
+    @media (max-width: 400px) {
+        
+        .searchCon {
+            width: 80%;
+           
+        }
+        .searchCon .head{
+            font-size: 25px;
+        }
+    
+}
+};
+
+
+
+    
+
+   
+
+ 
+
+
+
+
+
+
