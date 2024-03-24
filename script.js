@@ -24,7 +24,8 @@ btn.addEventListener('click', () => {
     </div>
 
     <p class="word-meaning">
-      ${data[0].meanings[0].definitions[0].definition}</p>
+  
+    ${data[0].meanings[0].definitions[0].definition}</p>
     </p>
 
     <p class="antonyms">
@@ -36,7 +37,7 @@ btn.addEventListener('click', () => {
     
 
     <p class="word-example">
-        ${data[0].meanings[0].definitions[0].example || ""}
+        Example: ${data[0].meanings[0].definitions[0].example || ""}
     </p>`;
 
     })
