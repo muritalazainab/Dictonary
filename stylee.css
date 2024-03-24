@@ -13,11 +13,11 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #4d59fb;
+    background-color: #ecf5ff;;
 }
 
 .searchCon {
-    background-color: #fff ;
+    background-color: #5ba5 ;
     padding: 3rem 2rem;
     position: absolute;
     top: 50%;

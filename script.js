@@ -1,6 +1,6 @@
 const url ="https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-const result = document.getElementById('active');
+const result = document.getElementById('result');
 
 const btn = document.getElementById('search')
 
@@ -10,7 +10,8 @@ btn.addEventListener('click', () => {
     fetch(`${url}${inpWord}`)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
+        console.log(data);   
+        // string interpolation
         result.innerHTML = `
         <div class="word">
         <h3 class="visible">
@@ -29,10 +30,10 @@ btn.addEventListener('click', () => {
     </p>
 
     <p class="antonyms">
-        Antonyms:  ${data[0].meanings[0].antonyms}
+        Antonyms:  ${data[0].meanings[0].antonyms || "Not found"}
     </p>
     <p class="synonyms">
-      Synonyms:  ${data[0].meanings[0].synonyms}
+      Synonyms:  ${data[0].meanings[0].synonyms || "Not found"}
     </p>
     
 
