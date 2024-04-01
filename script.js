@@ -1,23 +1,28 @@
-const url ="https://api.dictionaryapi.dev/api/v2/entries/en/";
+const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+const result = document.getElementById("result");
+// it is a representation of an  html element by id
 
-const result = document.getElementById('result');
+const btn = document.getElementById("search");
 
-const btn = document.getElementById('search')
-
-
-btn.addEventListener('click', () => {
-    let inpWord = document.getElementById('input').value;
-    fetch(`${url}${inpWord}`)
+btn.addEventListener("click", () => {
+  // it make the button clickable without  clicking the button what it inside the input field wont work
+  let inpWord = document.getElementById("input").value;
+  // the variable is just representing wat is going value
+  fetch(`${url}${inpWord}`)
+    // it is fetching the api and wat is inserted to the input field which is the value
     .then((response) => response.json())
+    // response should in json format
     .then((data) => {
-        console.log(data);   
-        // string interpolation
-        result.innerHTML = `
+      // then it should be resave as data
+      console.log(data);
+      // string interpolation : is an expreesion inserted or placed in the string
+      result.innerHTML = `
         <div class="word">
         <h3 class="visible">
             ${inpWord}
-        </h3>
+        </h3>  
     </div>
+
 
     <div class="info">
         <p>${data[0].meanings[0].partOfSpeech}</p>
@@ -30,19 +35,18 @@ btn.addEventListener('click', () => {
     </p>
 
     <p class="antonyms">
-        Antonyms:  ${data[0].meanings[0].antonyms || "Not found"}
+        Antonyms:  ${data[0].meanings[0].antonyms || ""}
     </p>
     <p class="synonyms">
-      Synonyms:  ${data[0].meanings[0].synonyms || "Not found"}
+      Synonyms:  ${data[0].meanings[0].synonyms || ""}
     </p>
     
 
     <p class="word-example">
         Example: ${data[0].meanings[0].definitions[0].example || ""}
     </p>`;
-
     })
-    .catch( () => {
-        result.innerHTML = `<h2 class="err">Could Not Find Your word </h2>`
-    })
+    .catch(() => {
+      result.innerHTML = `<h2 class="err">Could Not Find Your word </h2>`;
+    });
 });
